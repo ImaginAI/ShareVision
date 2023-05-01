@@ -1,5 +1,6 @@
-body {
+/* body {
   font-family: sans-serif;
+  
 }
 
 nav {
@@ -21,4 +22,13 @@ nav ul li:first-child {
 #secret-container {
   text-align: center;
   border: black 1px dashed;
+} */
+ body {
+height: 100vh;
+width: 100vw;
+background-color: red;
+} 
+
+#search-bar {
+  width: 15px;
 }
