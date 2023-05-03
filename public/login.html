@@ -5,21 +5,47 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./styles/style.css">
-  <script type="module" src="./scripts/login.js"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <!-- <script type="module" src="./scripts/login.js"></script> -->
   <title>Log in</title>
 </head>
 <body>
   <nav id="main-nav"></nav>
-  <main>
-    <h1 id="log-in">Log In</h1>
-    <form id="create-form" aria-describedby="log-in">
-      <label for="username">Username</label>
-      <input type="text" name="username" id="username" autocomplete="username">
-      <label for="password">Password</label>
-      <input type="password" name="password" id="password" autocomplete="password">
+  <main id="main">
 
-      <button type="submit">Log in!</button>
-    </form>
+    <button id="login-b" onclick="document.getElementById('id01').style.display='flex'" class="w3-button w3-black">Login</button>
+  
+    <modal id="mod">
+      
+      <div id="id01" class="w3-modal" >
+  
+        <div class="w3-modal-content w3-modal-content w3-animate-zoom">
+          <div class="w3-container modal-contain">
+            <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+            <h3 id="sign-up">Welcome Back!</h3>
+            <h6>Login to regain your Vision™</h6>
+  
+          <form id="create-form" aria-describedby="log-in">
+            
+            <div class="login-inputs" id="user-sec">
+              <label for="username">Username</label>
+              <input required type="text" name="username" id="username" autocomplete="username"  placeholder="Enter your Username">
+            </div>
+  
+            <div class="login-inputs" id="pass-sec">
+              <label for="password">Password</label>
+              <input required type="password" name="password" id="password" autocomplete="password" placeholder="Enter your password">
+            </div>
+    
+            <button id="login-inner-b" type="submit" onclick="document.getElementById('id01').style.display='none'">Continue</button>
+          </form>
+          </div>
+        </div>
+  
+      </div>
+  
+    </modal>  
+  
   </main>
 </body>
 </html>

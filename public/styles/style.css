@@ -59,6 +59,13 @@ modal{
   align-items: center;
   padding:2%;
 }
+.login-inputs{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding:2%;
+}
+
 
 .w3-container.modal-contain {  
   padding:5%;
@@ -83,5 +90,17 @@ modal{
   background-color: #A58989;
   padding:5%;
   border-radius: 25px;
+} 
 
+#login-b{
+  height:5%;
+  display: flex;
+  align-items: center;
+}
+#login-inner-b{
+  color:linen;
+  border-color: aliceblue;
+  background-color: #A58989;
+  padding:5%;
+  border-radius: 25px;
 } 
