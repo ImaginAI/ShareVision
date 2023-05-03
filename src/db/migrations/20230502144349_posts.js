@@ -3,11 +3,11 @@
  * @returns { Promise<void> }
  */
 exports.up = (knex) => knex.schema.createTable('posts', (table) => {
-    table.increments('post_id');
-    table.int('user_id').notNullable();
-    table.string('image_url').notNullable();
+    table.increments('id');
+    table.integer('user_id').references('id').inTable('users').notNullable();
+    table.string('image_url');
     table.string('title')
-    table.string('post_body');
+    table.string('content');
     table.timestamps(true, true);
   });
   
