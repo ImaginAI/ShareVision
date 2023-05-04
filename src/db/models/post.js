@@ -2,17 +2,18 @@ const knex = require('../knex');
 
 class Post {
 
-  constructor({ id, user_id, image_url, title, content }) {
+  constructor({ id, user_id, image_url, title, content, username }) {
     this.id = id;
     this.user_id = user_id;
     this.image_url = image_url;
     this.title = title;
     this.content = content;
+    this.username = username
   }
 
   static async list() {
     try {
-      const query = 'SELECT * FROM posts';
+      const query = 'SELECT posts.*,username FROM posts JOIN users ON posts.user_id = users.id';
       const { rows } = await knex.raw(query);
       return rows.map((post) => new Post(post));
     } catch (err) {
