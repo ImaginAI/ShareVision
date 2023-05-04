@@ -4,19 +4,21 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Modal Cards - Free Bulma template</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Modal Cards</title>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.9.1/css/OverlayScrollbars.min.css'>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> -->
     <!-- Bulma Version 0.9.0-->
     <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" />
-    <link rel="stylesheet" type="text/css" href="../css/hero.css">
+    <!-- <link rel="stylesheet" type="text/css" href="../css/hero.css"> -->
     <link rel="stylesheet" href="https://unpkg.com/bulma-modal-fx/dist/css/modal-fx.min.css" />
-    <link rel="stylesheet" href="style.css">
-    <style>
+
+    <link rel="stylesheet" href="./styles/index.css">
+    <!-- <style>
     .columns:nth-child(2)
     {margin-top: -10rem;}
-    </style>
+    </style> -->
           <script defer src="https://unpkg.com/bulma-modal-fx/dist/js/modal-fx.min.js"></script>
           <script defer src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
           <script defer src='https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.9.1/js/OverlayScrollbars.min.js'></script>  
@@ -41,17 +43,16 @@
       
       <card class="column is-4 modal-button" data-target="modal-card">
         <div class="card is-shady">
-          <div class="card-image">
-            <figure class="image is-4by3">
-              <img src="https://source.unsplash.com/6Ticnhs1AG0" alt="Placeholder image">
-            </figure>
+          <div class="card-image ">
+            <!-- <figure class="image is-4by3"> -->
+              <img src="https://source.unsplash.com/6Ticnhs1AG0">
+            <!-- </figure> -->
           </div>
           <div class="card-content">
-            <div class="content">
-              <h4>Tempor orci dapibus faber in.</h4>
-              <p>Ut venenatis tellus in metus vulputate. Amet consectetur adipiscing elit pellentesque. Sed arcu non odio euismod lacinia at quis risus. Faucibus turpis in eu mi bibendum neque egestas cmonsu songue. Phasellus vestibulum lorem
-              sed risus.</p>
-              <span class="button is-link modal-button" data-target="modal-card">Modal Card</span>
+            <div class="content " >
+              <h4>Brooklyn Adventure</h4>
+              <p>It's just a Desc bro</p>
+              <span class="button is-link modal-button" data-target="train">Like</span>
             </div>
           </div>
         </div>
@@ -61,108 +62,57 @@
 
         
 
-        <div class="column is-4 modal-button" data-target="modal-image">
-          <!-- <div class="card is-shady"> -->
+        <card class="column is-4 modal-button" data-target="dai">
+          <div class="card is-shady">
             <div class="card-image">
-              <figure class="image is-4by3">
-                <img src="https://th.bing.com/th/id/OIP.-HZlSijH_WEaJFxzHleHMAHaEK?pid=ImgDet&rs=1" alt="daijin">
-              </figure>
+                <img src="https://th.bing.com/th/id/OIP.-HZlSijH_WEaJFxzHleHMAHaEK?pid=ImgDet&rs=1">
             </div>
             <div class="card-content">
               <div class="content">
-                <h4>Card Title</h4>
+                <h4>Daijin</h4>
                 <p>This is going to equate to the value of the Description (if it exists)</p>
-                <span class="button is-link modal-button" data-target="modal-image">Image modal</span>
+                <span class="button is-link modal-button" data-target=""">Like</span>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-
-
-
-        <div class="column is-4">
-          <div class="card is-shady">
-            <div class="card-image">
-              <figure class="image is-4by3">
-                <img src="https://source.unsplash.com/hLyd1LukQ7E" alt="butterfly image" class="modal-button" data-target="modal-image4">
-              </figure>
-            </div>
-            <div class="card-content  modal-button" data-target="modal-card2">
-              <div class="content">
-                <h4>Click anywhere on card to <br>expand into modal card - header image expands into bigger image</h4>
-                <p>Purus semper eget duis at tellus at urna condimentum mattis. Non blandit massa enim nec. Integer enim neque volutpat ac tincidunt vitae semper quis.</p>
-                <span class="button is-link modal-button">Modal card</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+          </card>
+      
     </section>
+
+
     <footer>
       
       
     </footer>
+
+    
     <!--  ===============
     HERE BE MODALS
     ===============  -->
 
-    <train-card>
-      <div id="modal-card" class="modal modal-fx-3dSlit">
-        <div class="modal-background"></div>
-        <div class="modal-content is-tiny">
-          <!-- content -->
-          <div class="card">
-            <div class="card-image">
-              <figure class="image is-4by3">
-                <img src="https://source.unsplash.com/6Ticnhs1AG0" alt="Placeholder image">
-              </figure>
-            </div>
-            <div class="card-content">
-              <div class="media">
-                <div class="media-left">
-                  <figure class="image is-48x48">
-                    <img src="http://www.radfaces.com/images/avatars/linda-barret.jpg" alt="">
-                  </figure>
-                </div>
-                <div class="media-content">
-                  <p class="title is-4">Post Name</p>
-                  <!-- <p class="subtitle is-6">@jane_doe</p> -->
-                </div>
-              </div>
-              <div class="content">
-                Description that was inputted
-                <!-- <a>@bulmaio</a>.
-                <a href="#">#css</a>
-                <a href="#">#responsive</a> -->
-                <br>
-                <!-- <time datetime="2018-02-02">12:45 AM - 20 June 2018</time> -->
-                <p>By `{Creator}`</p>
-              </div>
-            </div>
-          </div>
-          <!-- end content -->
-        </div>
-        <button class="modal-close is-large" aria-label="close"></button>
-      </div>  
-    </train-card>
-
-
-    <daijin-modal>
-      <div class="modal-card"><div id="modal-image" class="modal modal-fx-superScaled">
+    <modal id="train" class="modal modal-fx-3dSlit">
         <div class="modal-background"></div>
 
-        <div class="modal-content  is-image">
-          <!-- content -->
-          <img src="https://th.bing.com/th/id/OIP.-HZlSijH_WEaJFxzHleHMAHaEK?pid=ImgDet&rs=1" alt="Placeholder image">
-          <!--     <img src="https://source.unsplash.com/zFrUz_tNjCY" alt="placeholder"> -->    
-          <!-- end content -->
+          <content class="card modal-content is-tiny">
+              <img class="card-image image is-4by3" src="https://source.unsplash.com/6Ticnhs1AG0">
+
+              <div class="card-content content">
+                  <p class="title is-4 media-content">Post Name</p>
+                  <p>Description that was inputted</p>
+                  <p>{Creator Name}</p>
+              </div>
+          </content>   
+<!-- ////////////////////////////////////////////////////////////////////////// -->
+    </modal>
+
+
+    <modal  class="modal-card">
+
+        <div id="dai" class="modal modal-fx-superScaled">
+          <div class="modal-background"></div>
+          <img class="modal-content is-image" src="https://tinyurl.com/4rstmf8r">
         </div>
 
-        <button class="modal-close is-large" aria-label="close"></button>
-      </div></div>
-
-    </daijin-modal>
+    </modal>
       
 
   
