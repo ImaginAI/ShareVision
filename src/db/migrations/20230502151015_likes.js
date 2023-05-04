@@ -3,9 +3,9 @@
  * @returns { Promise<void> }
  */
 exports.up = (knex) => knex.schema.createTable('likes', (table) => {
-    table.increments('likes_id');
-    table.int('user_id').notNullable();
-    table.string('post_id').notNullable();
+    table.increments('id');
+    table.integer('user_id').references('id').inTable('users').notNullable();
+    table.integer('post_id').references('id').inTable('posts').notNullable();
   });
   
   /**
