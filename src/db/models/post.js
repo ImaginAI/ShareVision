@@ -25,7 +25,7 @@ class Post {
   static async create(user_id, image_url, title, content) {
     try {
 
-      const query = `INSERT INTO post (user_id, image_url, title, content)
+      const query = `INSERT INTO posts (user_id, image_url, title, content)
         VALUES (?, ?, ?, ?) RETURNING *`;
       const { rows: [post] } = await knex.raw(query, [user_id, image_url, title, content]);
       return new Post(post);
@@ -35,11 +35,22 @@ class Post {
     }
   }
 
-  update = async (post) => { // dynamic queries are easier if you add more properties
+  static async find(id) {
+    try {
+      const query = 'SELECT * FROM posts WHERE id = ?';
+      const { rows: [post] } = await knex.raw(query, [id]);
+      return post ? new Post(post) : null;
+    } catch (err) {
+      console.error(err);
+      return null;
+    }
+  }
+
+  update = async (title, content) => { // dynamic queries are easier if you add more properties
     try {
       const [updatedPost] = await knex('posts')
         .where({ id: this.id })
-        .update({ post })
+        .update({ title, content })
         .returning('*');
       return updatedPost ? new Post(updatedPost) : null;
     } catch (err) {
@@ -47,6 +58,18 @@ class Post {
       return null;
     }
   };
+
+  static async delete(id) {
+    try {
+      await knex.raw(`DELETE FROM likes WHERE post_id = ?`, [Number(id)])
+      const query = `DELETE FROM posts WHERE id = ? RETURNING *;`
+      const res = await knex.raw(query, [Number(id)]);
+      return res.rows[0];
+    } catch (err) {
+      console.error(err);
+      return null;
+    }
+  }
 
 }
 
