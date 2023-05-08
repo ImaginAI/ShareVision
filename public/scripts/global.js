@@ -74,6 +74,8 @@ const setNav = (hasLoggedInUser) => {
   document.querySelector('nav').innerHTML = navHtml;
 };
 
+const getEl = (idOrClass) => document.querySelector(idOrClass)
+
 // This is wonky. Once you learn about bundlers we won't have to
 // explicitly create globals. We just lack the tools right now.
 Object.assign(window, {
@@ -84,6 +86,7 @@ Object.assign(window, {
   setNav,
   logOutHandler,
   updateUsernameHandler,
+  getEl,
 });
 
 export {
@@ -94,4 +97,5 @@ export {
   setNav,
   logOutHandler,
   updateUsernameHandler,
+  getEl,
 };

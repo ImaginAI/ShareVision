@@ -14,6 +14,8 @@
     <!-- <link rel="stylesheet" type="text/css" href="../css/hero.css"> -->
     <link rel="stylesheet" href="https://unpkg.com/bulma-modal-fx/dist/css/modal-fx.min.css" />
 
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
     <link rel="stylesheet" href="./styles/index.css">
     <!-- <style>
     .columns:nth-child(2)
@@ -22,21 +24,61 @@
     <script defer src="https://unpkg.com/bulma-modal-fx/dist/js/modal-fx.min.js"></script>
     <script defer src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script defer src='https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.9.1/js/OverlayScrollbars.min.js'></script>  
-    <script defer src="../js/wild.js"></script>
+    <!-- <script defer src="../js/wild.js"></script> -->
     <script>
     document.addEventListener("DOMContentLoaded", function() {
       OverlayScrollbars(document.querySelectorAll("body"), { });
     });
     </script>
-
+    <script defer src="scripts/index.js"></script>
   </head>
   <body>
     <section>
       <!-- <input  id= "search-bar"class="input is-rounded" type="text" placeholder="Rounded input"> -->
     </section>
     
+    <a href="create.html"> Create User</a>
     
-    <section class="container">
+    <button id="create-b" onclick="document.getElementById('id01').style.display='flex'" class="w3-button w3-black">Create Post</button>
+    
+    <modal id="mod">
+      
+      <div id="id01" class="w3-modal" >
+  
+        <div class="w3-modal-content w3-modal-content w3-animate-zoom">
+          <div class="w3-container modal-contain">
+            <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+            <h3 id="sign-up">Create A New Post!</h3>
+            
+
+            <form id="create-post" >
+              <div class="post-inputs" id="title-sec">
+                <label for="Title">Title</label>
+                <input required type="text" name="Title" id="title" autocomplete="title" placeholder="Create a Title">
+              </div>
+            
+              <div class="post-inputs" id="url-sec">
+                <label for="link">URL</label>
+                <input required type="text" name="link" id="url" autocomplete="link" placeholder="Enter a URL">
+              </div>
+            
+              <div class="post-inputs" id="desc-sec">
+                <label for="description">Description (Optional)</label>
+                <input type="text" name="description" id="desc" autocomplete="desc" placeholder="Create a Description">
+              </div>
+
+              <button id="post-inner-b" type="submit">Create</button>
+            </form>
+
+          </div>
+        </div>
+      </div>
+  
+    </modal>
+    
+    <!-- //////////////////////////////////////////// -->
+
+    <section id="posts-content" >
 
       
       <card class="column is-4 modal-button" data-target="modal-card">
@@ -68,14 +110,12 @@
             <div class="card-content">
               <div class="content">
                 <h4>Daijin</h4>
-                <p>This is going to equate to the value of the Description (if it exists)</p>
                 <span class="button is-link modal-button" data-target=""">Like</span>
               </div>
             </div>
           </card>
       
     </section>
-
 
     <footer>
       
@@ -86,33 +126,31 @@
     <!--  ===============
     HERE BE MODALS
     ===============  -->
+    <section id="post-modals">
 
-    <modal id="train" class="modal modal-fx-3dSlit">
-        <div class="modal-background"></div>
-
-          <content class="card modal-content is-tiny">
-              <img class="card-image image is-4by3" src="https://source.unsplash.com/6Ticnhs1AG0">
-
-              <div class="card-content content">
-                  <p class="title is-4 media-content">Post Name</p>
-                  <p>Description that was inputted</p>
-                  <p>{Creator Name}</p>
-              </div>
-          </content>   
-<!-- ////////////////////////////////////////////////////////////////////////// -->
-    </modal>
-
-
-    <modal  class="modal-card">
-
-        <div id="dai" class="modal modal-fx-superScaled">
+      <modal id="train" class="modal modal-fx-3dSlit">
           <div class="modal-background"></div>
-          <img class="modal-content is-image" src="https://tinyurl.com/4rstmf8r">
-        </div>
+            <content class="card modal-content is-tiny">
+                <img class="card-image image is-4by3" src="https://source.unsplash.com/6Ticnhs1AG0">
 
-    </modal>
-      
+                <div class="card-content content">
+                    <p class="title is-4 media-content">Post Name</p>
+                    <p>Description that was inputted</p>
+                    <p>{Creator Name}</p>
+                </div>
+            </content>   
+      </modal>
 
+      <modal  class="modal-card">
+
+          <div id="dai" class="modal modal-fx-superScaled">
+            <div class="modal-background"></div>
+            <img class="modal-content is-image" src="https://tinyurl.com/4rstmf8r">
+          </div>
+
+      </modal>
+    
+    </section>
   
   </body>
 </html>
