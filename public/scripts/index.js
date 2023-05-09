@@ -58,7 +58,6 @@ const main = async () => {
   }
 };
 
-main();
 
 
 console.log("this script works")
@@ -88,9 +87,14 @@ createForm.addEventListener('submit', (e) => {
     content : e.target[2].value
   }
   // console.log(body)
-   let post =  handleFetch('http://127.0.0.1:3000/api/posts',getFetchOptions(body))
-
-   console.log(post)
+   let post =  handleFetch('http://127.0.0.1:3000/api/posts',getFetchOptions(body),'POST')
+   console.log(post.json)
 
    return post
 });
+
+
+
+main();
+
+
